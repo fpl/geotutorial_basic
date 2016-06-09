@@ -1,0 +1,8 @@
+time,latitude,longitude,depth,mag,magType,nst,gap,dmin,rms,net,id,updated,place,type,horizontalError,depthError,magError,magNst,status,locationSource,magSource
+2016-06-09T08:06:36.340Z,33.595,-116.8141667,8.91,0.24,ml,12,160,0.04479,0.13,ci,ci37373799,2016-06-09T08:10:12.031Z,"14km WNW of Anza, CA",earthquake,0.54,0.61,0.08,9,automatic,ci,ci
+2016-06-09T07:45:27.830Z,36.2191658,-120.7938309,4.94,1.75,md,18,115,0.006834,0.11,nc,nc72648211,2016-06-09T08:01:03.040Z,"29km E of King City, California",earthquake,0.43,0.48,0.36,7,automatic,nc,nc
+2016-06-09T07:41:32.430Z,34.1205,-117.3193333,11.67,0.74,ml,25,67,0.08146,0.14,ci,ci37373783,2016-06-09T07:45:12.952Z,"3km WSW of San Bernardino, CA",earthquake,0.27,0.76,0.201,19,automatic,ci,ci
+2016-06-09T07:34:45.000Z,61.3717,-149.825,24.7,2,ml,,,,0.68,ak,ak13637312,2016-06-09T07:47:57.042Z,"17km NNE of Anchorage, Alaska",earthquake,0.2,0.2,,,automatic,ak,ak
+2016-06-09T07:23:46.710Z,-10.6162,119.1336,36.55,4.8,mb,,86,3.638,1.05,us,us2000630w,2016-06-09T07:51:20.636Z,"98km SSW of Bogorawatu, Indonesia",earthquake,6.8,6.9,0.077,52,reviewed,us,us
+2016-06-09T07:22:07.810Z,38.8246651,-122.8388367,1.22,1.04,md,14,128,0.003352,0.04,nc,nc72648206,2016-06-09T07:43:02.976Z,"8km NW of The Geysers, California",earthquake,0.27,0.45,0.02,5,automatic,nc,nc
+2016-06-09T07:15:48.610Z,38.8146667,-122.8068314,2.97,1.21,md,20,83,0.009076,0.02,nc,nc72648201,2016-06-09T07:31:02.942Z,"6km NW of The Geysers, California",earthquake,0.26,0.5,0.12,5,automatic,nc,nc

@@ -1,0 +1,157 @@
+ DataFile processed : 21415_from_20070727_08_55_15.res2       
+ Task data file     : 21415_from_20070727_08_55_15.inp        
+
+  Station =21415,  : #21415 - 175 NM S of Attu, AK           
+   Lat  =   50o   9'  58"  =   50.1663o
+   Long =  171o  50'   9"  =  171.8360o
+
+ input_key = 1  if =1 - 15 sec data, if =2 - hourly data
+  Tidal analysis starts at 2007/07/27 09:00:00
+  degrees of freedom (parameters) =   1
+  a linear trend is included in the analysis
+
+ number of minutes for decimating nMins=   0
+    if nMins > 0 then this value is used
+    if nMins = 0 or 60, -> 60 min decimation at even hour
+    if nMins < 0 no decimation, source data as is
+ 
+ Number of tidal constituents =  69
+
+!!!!!!!!!!
+ Unit conversion from Z[meters] to Z[psi] Z=Z/0.67
+!!!!!!!!!!
+
+
+ 15 sec data readed 4051700
+2007/07/27 08:55:15  7028.93066         1st  line
+2009/06/29 19:00:00     0.00000         Last line
+
+ 1 hour data readed   16858
+2007/07/27 09:00:00  7028.94482         1st  line
+2009/06/29 18:00:00  7027.63135         Last line
+
+ Rayleigh criterion check 
+
+ Data points for the tidal analysis N =  16858
+ Eigenvalues Max, Min            :    147.43        59.175    
+ Largest residual magnitude      :   0.18213    
+ Residual sum of squares         :    21.778    
+
+ St. Dev. of right hand sides of the
+ Original overdetermined system  :   0.53435    
+ Root mean square residual error :   0.03609
+
+ RMS residual: brute force       :   0.03609
+ max residual, imax=     4       :   0.18213    
+
+ HARMONIC ANALYSIS RESULTS
+ (after corrections for nodal modulation, astronomical argument and inferred constituents).
+ If linear trend is applied the slope is shown as the phase of the constant Z0
+
+ Constituent       Frequency     Amplitude    Greenwich  Inferred      C       S    Ampl_SD  t-tests
+                  [cycles/hour]   [psi]       Phase Lag  Constit.
+   Z0             0.0000000000 7027.899414 -0.00436930   (M2   )    0.000    0.001    0.000    0.000
+   SA             0.0001140741    0.049433    230.6423   (SSA  )    0.000    0.000    0.000  119.145
+   SSA            0.0002281591    0.006437     69.2147   (Z0   )    0.000    0.000    0.000   16.158
+   MSM            0.0013097808    0.006093    124.5740   (MM   )    0.000    0.000    0.000   15.438
+   MM             0.0015121518    0.010998    170.5174   (MSF  )    0.000    0.000    0.000   27.814
+   MSF            0.0028219328    0.000840    227.7443   (Z0   )    0.000    0.000    0.000    2.135
+   MF             0.0030500919    0.035887    157.4560   (MSF  )    0.000    0.000    0.000   91.179
+   ALP1           0.0343965702    0.002803    313.3992   (2Q1  )    0.000    0.000    0.000    8.400
+   2Q1            0.0357063524    0.009162    300.0182   (Q1   )    0.000    0.000    0.000   28.216
+   SIG1           0.0359087214    0.009859    305.4274   (2Q1  )    0.000    0.000    0.000   28.959
+   Q1             0.0372185037    0.067711    308.9442   (O1   )    0.000    0.000    0.000  202.440
+   RHO1           0.0374208726    0.013221    310.6924   (Q1   )    0.000    0.000    0.000   38.863
+   O1             0.0387306549    0.359998    317.8962   (K1   )    0.000    0.000    0.000 1051.523
+   TAU1           0.0389588140    0.001497    307.9902   (O1   )    0.001    0.001    0.001    2.936
+   BET1           0.0400404371    0.002787    324.9205   (NO1  )    0.000    0.000    0.000    8.355
+   NO1            0.0402685963    0.031364    324.7704   (K1   )    0.000    0.000    0.000   67.154
+   CHI1           0.0404709652    0.005164    326.1967   (NO1  )    0.000    0.000    0.000   15.092
+   PI1            0.0414385125    0.008802    333.2297   (P1   )    0.000    0.000    0.000   22.166
+   P1             0.0415525883    0.157479    332.0335   (K1   )    0.000    0.000    0.000  395.893
+   S1             0.0416666716    0.018795    324.7481   (K1   )    0.001    0.001    0.001   32.241
+   K1             0.0417807475    0.491829    335.2135   (Z0   )    0.000    0.000    0.000 1358.517
+   PSI1           0.0418948196    0.002781    344.5883   (K1   )    0.000    0.000    0.000    7.144
+   PHI1           0.0420089066    0.005950    329.0745   (K1   )    0.000    0.000    0.000   14.133
+   THE1           0.0430905260    0.005185    342.8756   (J1   )    0.000    0.000    0.000   14.553
+   J1             0.0432928987    0.024345    340.9991   (K1   )    0.000    0.000    0.000   76.525
+   SO1            0.0446026772    0.004977     10.4873   (OO1  )    0.000    0.000    0.000   14.569
+   OO1            0.0448308364    0.013262      4.1002   (J1   )    0.000    0.000    0.000   49.924
+   UPS1           0.0463429913    0.001691     10.6972   (OO1  )    0.000    0.000    0.000    6.901
+   OQ2            0.0759749487    0.000904    313.5038   (EPS2 )    0.000    0.000    0.000    2.652
+   EPS2           0.0761773139    0.002514    296.4836   (2N2  )    0.000    0.000    0.000    6.721
+   2N2            0.0774870962    0.009441    351.1345   (MU2  )    0.000    0.000    0.000   26.623
+   MU2            0.0776894689    0.007814    318.1608   (N2   )    0.000    0.000    0.000   19.660
+   N2             0.0789992511    0.069639     40.1659   (M2   )    0.000    0.000    0.000  171.587
+   NU2            0.0792016163    0.014700     46.8996   (N2   )    0.000    0.000    0.000   36.461
+   GAM2           0.0803090259    0.001755     31.0060   (H1   )    0.000    0.000    0.000    4.263
+   H1             0.0803973302    0.003992     88.4153   (M2   )    0.000    0.000    0.000   10.025
+   M2             0.0805113986    0.261784     94.3852   (Z0   )    0.000    0.000    0.000  641.973
+   H2             0.0806254745    0.003413    348.1744   (M2   )    0.000    0.000    0.000    8.502
+   MKS2           0.0807395577    0.000997     15.6656   (M2   )    0.000    0.000    0.000    3.049
+   LDA2           0.0818211809    0.002817    138.9412   (L2   )    0.000    0.000    0.000    6.902
+   L2             0.0820235536    0.006144    105.0052   (S2   )    0.000    0.000    0.000   18.880
+   T2             0.0832192600    0.003444    247.9018   (S2   )    0.000    0.000    0.000    8.738
+   S2             0.0833333358    0.048629    209.8308   (M2   )    0.000    0.000    0.000  123.598
+   R2             0.0834474042    0.000687    325.6565   (S2   )    0.000    0.000    0.000    2.136
+   K2             0.0835614949    0.012650    206.4025   (S2   )    0.000    0.000    0.000   39.754
+   MSN2           0.0848454833    0.000654    354.8497   (ETA2 )    0.000    0.000    0.000    1.578
+   ETA2           0.0850736424    0.000768    238.5634   (K2   )    0.000    0.000    0.000    3.089
+   MO3            0.1192420572    0.001216     79.2564   (M3   )    0.000    0.000    0.000    3.458
+   M3             0.1207671016    0.002347     83.0185   (M2   )    0.000    0.000    0.000    5.721
+   SO3            0.1220639870    0.000381     33.3609   (MK3  )    0.000    0.000    0.000    1.115
+   MK3            0.1222921461    0.000793     92.9454   (M3   )    0.000    0.000    0.000    2.139
+   SK3            0.1251140833    0.000767     21.0415   (MK3  )    0.000    0.000    0.000    2.131
+   MN4            0.1595106423    0.000602    243.2020   (M4   )    0.000    0.000    0.000    1.449
+   M4             0.1610227972    0.001038    266.6042   (M3   )    0.000    0.000    0.000    2.499
+   SN4            0.1623325795    0.000142    346.4869   (M4   )    0.000    0.000    0.000    0.353
+   MS4            0.1638447344    0.000645     57.7933   (M4   )    0.000    0.000    0.000    1.597
+   MK4            0.1640728861    0.000579     66.3011   (MS4  )    0.000    0.000    0.000    1.772
+   S4             0.1666666716    0.000437    174.0283   (MS4  )    0.000    0.000    0.000    1.116
+   SK4            0.1668948233    0.000602    117.1712   (S4   )    0.000    0.000    0.000    1.899
+   2MK5           0.2028035522    0.000161     77.7667   (M4   )    0.000    0.000    0.000    0.423
+   2SK5           0.2084474117    0.000157    346.7819   (2MK5 )    0.000    0.000    0.000    0.438
+   2MN6           0.2400220484    0.000523     58.4788   (M6   )    0.000    0.000    0.000    1.225
+   M6             0.2415342033    0.000940     80.1597   (2MK5 )    0.000    0.000    0.000    2.202
+   2MS6           0.2443561405    0.001136    115.2095   (M6   )    0.000    0.000    0.000    2.737
+   2MK6           0.2445842922    0.000327    131.8270   (2MS6 )    0.000    0.000    0.000    0.972
+   2SM6           0.2471780628    0.000313    187.3551   (2MS6 )    0.000    0.000    0.000    0.778
+   MSK6           0.2474062294    0.000093    220.8607   (2SM6 )    0.000    0.000    0.000    0.284
+   3MK7           0.2833149433    0.000072    137.5813   (M6   )    0.000    0.000    0.000    0.183
+   M8             0.3220455945    0.000159    184.2534   (3MK7 )    0.000    0.000    0.000    0.362
+
+ NO INFERENCE included in the analysis
+
+ N,     M          16858         138
+ LAT,   LON      50.1663    171.8360
+ SDEV0, SDEV    0.53D+00    0.36D-01
+ RECALCULATED ROOT MEAN SQUARE RESIDUAL ERROR IS           0.03605
+
+
+ Rank correlation between eigen vectors
+    1  largest corr. coeff. is  0.405   at (i,j)=   4   2   for constituents   SA    &  Z0   
+    2  largest corr. coeff. is  0.224   at (i,j)=  71  70   for constituents   H1    &  GAM2 
+    3  largest corr. coeff. is  0.224   at (i,j)=  72  69   for constituents   H1    &  GAM2 
+    4  largest corr. coeff. is  0.146   at (i,j)=   6   2   for constituents   SSA   &  Z0   
+    5  largest corr. coeff. is  0.136   at (i,j)=   5   2   for constituents   SSA   &  Z0   
+    6  largest corr. coeff. is  0.111   at (i,j)=  73  70   for constituents   M2    &  GAM2 
+    7  largest corr. coeff. is  0.110   at (i,j)=  74  69   for constituents   M2    &  GAM2 
+    8  largest corr. coeff. is  0.092   at (i,j)=  33  32   for constituents   CHI1  &  NO1  
+    9  largest corr. coeff. is  0.091   at (i,j)=   9   8   for constituents   MM    &  MSM  
+   10  largest corr. coeff. is  0.091   at (i,j)=  34  31   for constituents   CHI1  &  NO1  
+   11  largest corr. coeff. is  0.088   at (i,j)=  68  65   for constituents   NU2   &  N2   
+   12  largest corr. coeff. is  0.088   at (i,j)=  67  66   for constituents   NU2   &  N2   
+   13  largest corr. coeff. is  0.087   at (i,j)=  50  47   for constituents   J1    &  THE1 
+   14  largest corr. coeff. is  0.087   at (i,j)=  49  48   for constituents   J1    &  THE1 
+   15  largest corr. coeff. is  0.087   at (i,j)=  19  18   for constituents   SIG1  &  2Q1  
+   16  largest corr. coeff. is  0.087   at (i,j)=  64  61   for constituents   MU2   &  2N2  
+   17  largest corr. coeff. is  0.087   at (i,j)=  23  22   for constituents   RHO1  &  Q1   
+   18  largest corr. coeff. is  0.086   at (i,j)=  63  62   for constituents   MU2   &  2N2  
+   19  largest corr. coeff. is  0.086   at (i,j)=  24  21   for constituents   RHO1  &  Q1   
+   20  largest corr. coeff. is  0.086   at (i,j)=  20  17   for constituents   SIG1  &  2Q1  
+
+ N,     M          16858         138
+ LAT,   LON      50.1663    171.8360
+ SDEV0, SDEV    0.53D+00    0.36D-01
+ RECALCULATED ROOT MEAN SQUARE RESIDUAL ERROR IS           0.03590
+
