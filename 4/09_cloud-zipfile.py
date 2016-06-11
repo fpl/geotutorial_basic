@@ -9,4 +9,5 @@ memoryshape = StringIO.StringIO(cloudshape.read())
 zipshape = zipfile.ZipFile(memoryshape)
 cloudshp = zipshape.read("hancock.shp")
 # Access Python string as an array
+# read shapefile boundingbox
 struct.unpack("<dddd", cloudshp[36:68])
