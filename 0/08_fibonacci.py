@@ -1,5 +1,5 @@
 '''
-    Fiboacci as an external module call
+    Fibonacci as an external module call
 '''
 import fibonacci as fib
 
