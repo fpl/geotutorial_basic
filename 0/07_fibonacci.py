@@ -1,3 +1,6 @@
+'''
+    Preparing for modules...
+'''
 def fibonacci(n=2000):
     a, b = 0, 1
     f = []

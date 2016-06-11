@@ -1,3 +1,6 @@
+'''
+    Command line parameters
+'''
 import sys
 from fibonacci import fibonacci
 

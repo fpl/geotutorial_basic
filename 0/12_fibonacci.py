@@ -1,3 +1,7 @@
+'''
+    What if you call this script with a wrong type
+    parameter?
+'''
 import sys
 from fibonacci import fibonacci
 

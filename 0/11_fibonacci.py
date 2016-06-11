@@ -1,3 +1,7 @@
+'''
+    What if you call this script without the required
+    parameter?
+'''
 import sys
 from fibonacci import fibonacci
 

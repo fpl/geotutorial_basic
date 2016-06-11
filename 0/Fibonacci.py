@@ -1,3 +1,6 @@
+'''
+    Fibonacci, the OOP approach
+'''
 class Fibonacci:
     _f = []
 

@@ -1,3 +1,7 @@
+'''
+    A true function with a return value and
+    a list variable
+'''
 def fibonacci(n):
     a, b = 0, 1
     f = []
