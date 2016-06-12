@@ -1,4 +1,6 @@
-""""Attribute selection for subset""""
+'''
+Attribute selection for subset
+'''
 import shapefile
 # Create a reader instance
 r = shapefile.Reader("MS_UrbanAnC10")
