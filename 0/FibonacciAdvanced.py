@@ -65,6 +65,11 @@ class Lucas(Sequence):
 class FibonacciSuper(Sequence):
     def __init__(self, n=2000):
         super(FibonacciSuper,self).__init__(2,1,n)
+        '''
+        super(self.__class__,self).__init__(2,1,n)      # An alternative way in 2.7
+        Sequence.__init__(self,2,1,n)                   # Another alternative
+        super().__init__(2,1,n)     # The 3.0 way...
+        '''
 
 #
 # ... and all together
