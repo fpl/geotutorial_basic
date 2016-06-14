@@ -1,6 +1,6 @@
 #Examine a shapefile with ogr                                                                        
 
-from os geo import ogr
+from osgeo import ogr
 # open the shapefile
 shp = ogr.Open("point.shp")
 # Get the layer

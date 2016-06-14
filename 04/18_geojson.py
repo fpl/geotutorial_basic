@@ -1,4 +1,5 @@
-# Read and write GeoJson using the geojson module                                                                                import geojson
+# Read and write GeoJson using the geojson module 
+import geojson
 p = geojson.Point([-92, 37])
 geojs = geojson.dumps(p)
 print geojs
