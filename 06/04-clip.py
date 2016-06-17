@@ -8,7 +8,7 @@ import Image, ImageDraw
 raster = "stretched.tif"
 
 # Polygon shapefile used to clip
-shp = "hancock.shp"
+shp = "hancock"
 
 # Name of clipped raster file(s)
 output = "clip"
