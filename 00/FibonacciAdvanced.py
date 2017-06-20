@@ -82,7 +82,7 @@ if __name__ == "__main__":
     v = FibonacciSuper(1000000000000000000)
 
     u.list()
-    print u.name()
+    print 'This is a static method call: ' + FibonacciAdvanced.name()
 
     s.list()
     s.get()

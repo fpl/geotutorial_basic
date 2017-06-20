@@ -8,7 +8,7 @@ import shapely.wkt
 # Load the thai and myanmar polygons from the world borders
 # dataset.
 
-shapefile = osgeo.ogr.Open("data/TM_WORLD_BORDERS-0.3.shp")
+shapefile = osgeo.ogr.Open("files/TM_WORLD_BORDERS-0.3.shp")
 layer = shapefile.GetLayer(0)
 
 thailand = None

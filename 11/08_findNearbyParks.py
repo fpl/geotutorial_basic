@@ -1,4 +1,9 @@
-# findNearbyParks.py
+""" findNearbyParks.py
+
+    Additional data:
+    http://geonames.usgs.gov/domestic/download_data.htm
+
+"""
 
 from osgeo import ogr
 import shapely.geometry
@@ -10,7 +15,7 @@ print "Loading urban areas..."
 
 urbanAreas = {} # Maps area name to Shapely polygon.
 
-shapefile = ogr.Open("data/tl_2012_us_cbsa/tl_2012_us_cbsa.shp")
+shapefile = ogr.Open("files/tl_2012_us_cbsa.shp")
 layer = shapefile.GetLayer(0)
 
 for i in range(layer.GetFeatureCount()):

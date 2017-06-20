@@ -9,7 +9,7 @@ maxLat  = -33
 minLong = 165
 maxLong = 179
 
-dataset = gdal.Open("data/l10g")
+dataset = gdal.Open("files/l10g")
 band = dataset.GetRasterBand(1)
 
 t = dataset.GetGeoTransform()
