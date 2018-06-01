@@ -20,8 +20,8 @@ def nextbus(a, r, c="vehicleLocations", e=0):
   
 def ll2m(lat,lon):
   """Lat/lon to meters"""
-  x = lon * 20037508.34 / 180.0
-  y = math.log(math.tan((90.0 + lat) * \
+  x = float(lon) * 20037508.34 / 180.0
+  y = math.log(math.tan((90.0 + float(lat)) * \
    math.pi / 360.0)) / (math.pi / 180.0)
   y = y * 20037508.34 / 180
   return (x,y)
