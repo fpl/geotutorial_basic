@@ -12,11 +12,11 @@ def nextbus(a, r, c="vehicleLocations", e=0):
   xml = minidom.parse(urllib.urlopen(nbapi))
   bus=xml.getElementsByTagName("vehicle")
   if bus:    
-    at = bus.attributes
+    at = bus[0].attributes
     return(at["lat"].value, at["lon"].value)
   else: return (False, False)
 
-def nextmap(a, r, mapimg):
+def nextmap(a, r, mapimg, index):
   """Plots a nextbus location on a map image
   and saves it to disk using the OpenStreetMap
   Static Map API (osmapi)"""
@@ -25,37 +25,26 @@ def nextmap(a, r, mapimg):
   if not lat:
     return False
   # Base url + service path
-  osmapi = "http://ojw.dev.openstreetmap.org/"
-  osmapi += "StaticMap/?mode=API&"
-  # Show=1 returns an image
-  osmapi += "show=1" + "&"
-  # fmt can be "png" or "jpg" map image format
-  osmapi += "fmt=png" + "&"
-  # Remove the map image attribute label
-  osmapi += "att=none" + "&"
+  osmapi = "http://staticmap.openstreetmap.de/"
+  osmapi += "staticmap.php?maptype=mapnik&"
   # Map Image width and height in pixels
-  osmapi += "w=800" + "&"
-  osmapi += "h=600" + "&"
+  osmapi += "size=800x600" + "&"
   # Center the map on the bus location
-  osmapi += "lat=%s&" % lat
-  osmapi += "lon=%s&" % lon 
+  osmapi += "center=%s,%s" % (lat,lon) + "&"
   # Map zoom level (between 1-18)
   osmapi += "zoom=16" + "&"
   # Bus mark location 
-  osmapi += "mlat0=%s&" % lat 
-  osmapi += "mlon0=%s&" % lon
-  # Bus marker OpenStreetMap icon id
-  # (blue dot id=30326) 
-  osmapi += "mico0=30326"
+  osmapi += "markers=%s,%s,lightblue%d" % (lat, lon, index) 
+  print osmapi
   img = urllib.urlopen(osmapi)
   # Save the map image
-  with open(mapimg + ".png", "wb") as f:
+  with open(mapimg + "%d.png" % index, "wb") as f:
     f.write(img.read())
   return True
 
 # Nextbus API agency and bus line variables
-agency = "thunderbay"
-route = "1"
+agency = "chapel-hill"
+route = "A"
 
 # Name of map image to save as PNG
 nextimg = "nextmap"
@@ -68,7 +57,7 @@ freq = 5
 
 # Map the bus location every few seconds 
 for i in range(requests):
-  success = nextmap(agency, route, nextimg)
+  success = nextmap(agency, route, nextimg, i+1)
   if not success:
     print "No data available."
     continue
