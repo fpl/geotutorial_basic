@@ -14,7 +14,7 @@ def nextbus(a, r, c="vehicleLocations", e=0):
   xml = minidom.parse(urllib.urlopen(nbapi))
   bus=xml.getElementsByTagName("vehicle")
   if bus:    
-    at = bus.attributes
+    at = bus[0].attributes
     return(at["lat"].value, at["lon"].value)
   else: return (False, False)
   
@@ -44,8 +44,8 @@ def wms(minx, miny, maxx, maxy, service, lyr, img, w, h):
     f.write(wmsmap.read())
 
 # Nextbus agency and route ids
-agency = "thunderbay"
-route = "1"
+agency = "chapel-hill"
+route = "A"
 
 # NOAA OpenStreetMap WMS service
 basemap = "http://osm.woc.noaa.gov/mapcache" 
