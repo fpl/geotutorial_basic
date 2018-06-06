@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
 Use GDAL and OGR to create a contour shapefile
 """
@@ -30,3 +32,5 @@ ogr_lyr.CreateField(field_defn)
 
 ds = gdal.Open('dem.asc')
 gdal.ContourGenerate(ds.GetRasterBand(1), 400, 10, [], 0, 0, ogr_lyr, 0, 1)
+
+
