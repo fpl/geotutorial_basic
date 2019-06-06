@@ -21,7 +21,7 @@ def export():
     out.close()
     pickle.dump(cached, file(pickleJar, "w"))
 
-header = "POSTION\tFIELD\tSAMPLE\tTYPE\tBYTE_ORDER\n"
+header = "POSITION\tFIELD\tSAMPLE\tTYPE\tBYTE_ORDER\n"
 fileDesc = []
 files = os.listdir(".")
 count = 1

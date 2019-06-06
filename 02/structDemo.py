@@ -4,7 +4,7 @@ by reading the bounding box from a shapefile.
 """
 import struct
 # Open the shapefile
-f = open("hancock.shp","rb")
+f = open("../files/hancock.shp","rb")
 # Go to the start of the
 # bounding box coordinates
 f.seek(36)

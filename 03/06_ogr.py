@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from osgeo import ogr
 import os
 import sys
@@ -12,12 +14,12 @@ if inDS is None:
 inLayer = inDS.GetLayer()
 # create a new data source and layer
 if os.path.exists('test.shp'):
-driver.DeleteDataSource('test.shp')
+  driver.DeleteDataSource('test.shp')
 outDS = driver.CreateDataSource('test.shp')
 if outDS is None:
     print 'Could not create file'
     sys.exit(1)
-outLayer = outDS.CreateLayer('test', geom_type=ogr.wkbPoint)
+outLayer = outDS.CreateLayer('test', geom_type=ogr.wkbPolygon)
 # use the input FieldDefn to add a field to the output
 fieldDefn = inLayer.GetFeature(0).GetFieldDefnRef('id')
 outLayer.CreateField(fieldDefn)
