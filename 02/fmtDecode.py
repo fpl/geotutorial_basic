@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 fmtDecode.py - Simple program to manually decode binary formats.
 """
@@ -7,31 +9,31 @@ import pickle
 import os
 
 def export():
-    print "Saving results"
+    print("Saving results")
     out = None
     if cached:
-      out = file(oname, "a")
+      out = open(oname, "a")
     else:
-      out = file(oname, "w")
+      out = open(oname, "w")
       out.write(header)
     for record in fileDesc:
         for field in record:
             out.write("%s\t" % field)
         out.write("\n")
     out.close()
-    pickle.dump(cached, file(pickleJar, "w"))
+    pickle.dump(cached, open(pickleJar, "w"))
 
 header = "POSITION\tFIELD\tSAMPLE\tTYPE\tBYTE_ORDER\n"
 fileDesc = []
 files = os.listdir(".")
 count = 1
-print "Available Files:"
+print("Available Files:")
 
 for f in files:
-  print " %s. %s" % (count, f)
+  print(" %s. %s" % (count, f))
   count += 1
 
-fnum = raw_input("Enter the number of the file to decode: ")
+fnum = input("Enter the number of the file to decode: ")
 fname = files[int(fnum)-1]
 base = os.path.splitext(fname)[0]
 
@@ -40,9 +42,8 @@ pickleJar = "%s.p" % base
 cached = []
 
 if os.path.exists(pickleJar):
-    print "Cached session available."
-    print 
-    useCache = raw_input("Use it? Yes (Y), No (N)?")
+    print("Cached session available.\n")
+    useCache = input("Use it? Yes (Y), No (N)?")
     if "y" in useCache.lower() or useCache == "":
         cached = pickle.load(open(pickleJar, "r"))
     else: cached = []
@@ -57,11 +58,11 @@ f.seek(0)
 prev = 0
 
 if len(cached)>0:
-    print "Using cache..."
+    print("Using cache...")
     f.seek(cached[-1])
     prev = cached[-2]
     
-print "Starting at byte %s..." % f.tell()
+print("Starting at byte %s..." % f.tell())
 
 try:
     formats = {"char":{"format":"c","len":1},
@@ -85,7 +86,7 @@ try:
         record.append("%s\t" % start)
         cached.append(start)
         fields = []
-        print 
+        print()
         count = 1
         try:
           # Little endian formats
@@ -93,7 +94,7 @@ try:
             form = formats[fmt]["format"]
             bytes = formats[fmt]["len"]
             field = struct.unpack("<%s" % form, f.read(bytes))
-            print "%s. Little %s: %s" % (count, fmt, field)
+            print("%s. Little %s: %s" % (count, fmt, field))
             count += 1
             f.seek(start)
             fields.append([str(field[0]), fmt, "little", str(bytes)])
@@ -105,20 +106,20 @@ try:
             form = formats[fmt]["format"]
             bytes = formats[fmt]["len"]
             field = struct.unpack(">%s" % form, f.read(bytes))
-            print "%s. Big %s: %s" % (count, fmt, field)
+            print("%s. Big %s: %s" % (count, fmt, field))
             count += 1
             f.seek(start)
             fields.append([str(field[0]), fmt, "big", str(bytes)])
         except: pass                  
 
-        print "%s. Go back to previous" % count
-        print
-        print "Current location: %s" % f.tell()
-        choice = raw_input("Enter the number of one of the above options: ")
+        print("%s. Go back to previous" % count)
+        print()
+        print("Current location: %s" % f.tell())
+        choice = input("Enter the number of one of the above options: ")
         choice = int(choice.strip())
         desc = ""
         if choice != count:
-          desc = raw_input("Enter a field description: ")
+          desc = input("Enter a field description: ")
           record.append("%s\t" % desc)
           record.append("%s\t" % fields[choice-1][0])
           record.append("%s\t" % fields[choice-1][1])
@@ -128,16 +129,16 @@ try:
           fileDesc.append(record)
         elif choice == count:
             f.seek(prev)
-            print "Going back to previous field."          
+            print("Going back to previous field.")
     f.close()
     export()
 except KeyboardInterrupt:
-    print
+    print()
     reverse = input("How many records back? ")
     for i in range(reverse):
         cached.pop()
-    pickle.dump(cached, file(pickleJar, "w"))
-    print "The program will exit.  Restart and use cached version."
+    pickle.dump(cached, open(pickleJar, "w"))
+    print("The program will exit.  Restart and use cached version.")
     
 except:
     export()

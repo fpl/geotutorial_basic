@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 gc = { "type": "GeometryCollection",
   "geometries": [
     { "type": "Point",
@@ -8,6 +9,6 @@ gc = { "type": "GeometryCollection",
       }
   ]
 }
-print gc
+print(gc)
 
  
