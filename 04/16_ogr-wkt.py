@@ -1,12 +1,14 @@
+#!/usr/bin/python3
+
 # Convert a shapefile to WKT using ogr
 from osgeo import ogr
-shape = ogr.Open("polygon.shp")
+shape = ogr.Open("../files/polygon.shp")
 layer = shape.GetLayer()
 feature = layer.GetNextFeature()
 geom = feature.GetGeometryRef()
 wkt = geom.ExportToWkt()
 # View the WKT
-print wkt
+print(wkt)
 # Ingest the WKT we made and check the envelope
 poly = ogr.CreateGeometryFromWkt(wkt)
-print poly.GetEnvelope()
+print(poly.GetEnvelope())

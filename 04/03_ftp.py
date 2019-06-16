@@ -1,3 +1,5 @@
+#!/usr/bin/python3 
+
 # Read tsunami monitoring data via ftp
 import ftplib
 server = "ftp.ngdc.noaa.gov"
@@ -12,5 +14,5 @@ out.close()
 dart = open(fileName)
 for line in dart:
   if "LAT," in line:
-    print line
+    print(line)
     break

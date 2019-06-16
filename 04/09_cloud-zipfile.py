@@ -1,11 +1,13 @@
+#!/usr/bin/python3
+
 # Extract a zipped shapefile via a url
-import urllib
+import urllib.request
 import zipfile
-import StringIO
+import io
 import struct
 url = "http://spatial-ecology.net/dokuwiki/lib/exe/fetch.php?media=wiki:python:hancock.zip"
-cloudshape = urllib.urlopen(url)
-memoryshape = StringIO.StringIO(cloudshape.read())
+cloudshape = urllib.request.urlopen(url)
+memoryshape = io.BytesIO(cloudshape.read())
 zipshape = zipfile.ZipFile(memoryshape)
 cloudshp = zipshape.read("hancock.shp")
 # Access Python string as an array

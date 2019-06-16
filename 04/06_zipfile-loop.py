@@ -1,6 +1,8 @@
+#!/usr/bin/python3
+
 # Unzip a shapefile with a for loop
 import zipfile
-zip = open("hancock.zip", "rb")
+zip = open("../files/hancock.zip", "rb")
 zipShape = zipfile.ZipFile(zip)
 for fileName in zipShape.namelist():
   out = open(fileName, "wb")
