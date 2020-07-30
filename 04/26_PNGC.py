@@ -1,7 +1,9 @@
+#!/usr/bin/python3
+
 # Rasterize a shapefile with PNGCanvas
 import shapefile
 import pngcanvas
-r = shapefile.Reader("hancock.shp")
+r = shapefile.Reader("../files/hancock.shp")
 xdist = r.bbox[2] - r.bbox[0]
 ydist = r.bbox[3] - r.bbox[1]
 iwidth = 400

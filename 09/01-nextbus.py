@@ -5,10 +5,10 @@ from xml.dom import minidom
 command = "vehicleLocations"
 
 # Nextbus customer to query
-agency = "thunderbay"
+agency = "chapel-hill"
 
 # Bus we want to query
-route = "1"
+route = "A"
 
 # Time in milliseconds since the 
 # 1970 epoch time.  All tracks

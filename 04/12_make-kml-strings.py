@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Build KML manually using strings
 xml = """<?xml version="1.0" encoding="utf-8"?>"""
 xml += """<kml xmlns="http://www.opengis.net/kml/2.2">"""
@@ -11,4 +13,4 @@ xml += """      </coordinates>"""
 xml += """    </Point>"""
 xml += """  </Placemark>"""
 xml += """</kml>"""
-print xml
+print(xml)

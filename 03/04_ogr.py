@@ -1,5 +1,8 @@
+#!/usr/bin/python
+
 import osgeo.ogr
 import os.path
+
 import sys
 
 def findPoints(geometry, results):
@@ -14,7 +17,7 @@ def findPoints(geometry, results):
         findPoints(geometry.GetGeometryRef(i), results)
 
 mypath = os.path.dirname(os.path.realpath(sys.argv[0]))
-shapefile_name = os.path.join(mypath,"../files/tl_2012_us_state.shp")
+shapefile_name = os.path.join(mypath,"../files/tl_2012_us_cbsa.shp")
 shapefile = osgeo.ogr.Open(shapefile_name)
 layer = shapefile.GetLayer(0)
 feature = layer.GetFeature(55)

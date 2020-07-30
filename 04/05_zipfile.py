@@ -1,6 +1,8 @@
+#!/usr/bin/python3
+
 # Unzip a shapefile
 import zipfile
-zip = open("hancock.zip", "rb")
+zip = open("../files/hancock.zip", "rb")
 zipShape = zipfile.ZipFile(zip)
 shpName, shxName, dbfName = zipShape.namelist()
 shpFile = open(shpName, "wb")

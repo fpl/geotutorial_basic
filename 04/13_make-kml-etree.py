@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Build kml with eTree
 try:
     import xml.etree.cElementTree as ET

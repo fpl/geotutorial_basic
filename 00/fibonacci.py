@@ -6,6 +6,9 @@
 
 '''
 def fibonacci(n=2000):
+    '''
+        Compute Fibonacci series and return it as a list
+    '''
     a, b = 0, 1
     f = []
     while b<n:

@@ -8,7 +8,7 @@ from osgeo import osr
 
 # Open the source shapefile.
 
-srcFile = ogr.Open("data/TM_WORLD_BORDERS-0.3.shp")
+srcFile = ogr.Open("files/TM_WORLD_BORDERS-0.3.shp")
 srcLayer = srcFile.GetLayer(0)
 
 # Open the output shapefile.

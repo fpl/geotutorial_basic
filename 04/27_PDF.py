@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Create a pdf with a map image
 
 import fpdf

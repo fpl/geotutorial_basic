@@ -1,13 +1,17 @@
+#!/usr/bin/python
+
 import osgeo.ogr
 import os.path
 import sys
 
 mypath = os.path.dirname(os.path.realpath(sys.argv[0]))
-shapefile_name = os.path.join(mypath,"../files/tl_2012_us_state.shp")
+shapefile_name = os.path.join(mypath,"../files/tl_2012_us_cbsa.shp")
 shapefile = osgeo.ogr.Open(shapefile_name)
 numLayers = shapefile.GetLayerCount()
 
-print "Shapefile contains %d layers" % numLayers
+
+
+print ("Shapefile contains %d layers" % numLayers)
 print
 
 for layerNum in range(numLayers):

@@ -14,14 +14,14 @@ def nextbus(a, r, c="vehicleLocations", e=0):
   xml = minidom.parse(urllib.urlopen(nbapi))
   bus=xml.getElementsByTagName("vehicle")
   if bus:    
-    at = bus.attributes
+    at = bus[0].attributes
     return(at["lat"].value, at["lon"].value)
   else: return (False, False)
   
 def ll2m(lat,lon):
   """Lat/lon to meters"""
-  x = lon * 20037508.34 / 180.0
-  y = math.log(math.tan((90.0 + lat) * \
+  x = float(lon) * 20037508.34 / 180.0
+  y = math.log(math.tan((90.0 + float(lat)) * \
    math.pi / 360.0)) / (math.pi / 180.0)
   y = y * 20037508.34 / 180
   return (x,y)
@@ -44,8 +44,8 @@ def wms(minx, miny, maxx, maxy, service, lyr, img, w, h):
     f.write(wmsmap.read())
 
 # Nextbus agency and route ids
-agency = "thunderbay"
-route = "1"
+agency = "chapel-hill"
+route = "A"
 
 # NOAA OpenStreetMap WMS service
 basemap = "http://osm.woc.noaa.gov/mapcache" 

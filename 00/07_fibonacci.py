@@ -11,4 +11,7 @@ def fibonacci(n=2000):
 
 if __name__ == "__main__":
     s = fibonacci()
-    print s
+    print len(s)
+
+print s
+

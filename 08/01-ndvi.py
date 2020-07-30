@@ -9,7 +9,7 @@ def imageToArray(i):
   Converts a Python Imaging Library 
   array to a gdalnumeric image.
   """
-  a=gdalnumeric.numpy.fromstring(i.tostring(),'b')
+  a=gdalnumeric.numpy.fromstring(i.tobytes(),'b')
   a.shape=i.im.size[1], i.im.size[0]
   return a
    
@@ -26,7 +26,7 @@ def world2Pixel(geoMatrix, x, y):
   rtnX = geoMatrix[2]
   rtnY = geoMatrix[4]
   pixel = int((x - ulX) / xDist)
-  line = int((ulY - y) / xDist)
+  line = int((y - ulY) / yDist)
   return (pixel, line)    
 
 # Multispectral image used 
@@ -54,9 +54,9 @@ ir = srcArray[2]
 ## field boundary shapefile
 
 # Create an OGR layer from a Field boundary shapefile
-field = ogr.Open("field.shp")
+field = ogr.Open("field_new.shp")
 # Must define a "layer" to keep OGR happy
-lyr = field.GetLayer("field")
+lyr = field.GetLayer("field_new")
 # Only one polygon in this shapefile
 poly = lyr.GetNextFeature()
 
@@ -128,6 +128,12 @@ ndvi = 1.0 * (irClip - rClip) / irClip + rClip + 1.0
 # Remove any NaN values from the final product
 ndvi = gdalnumeric.numpy.nan_to_num(ndvi)
 
+ds = gdalnumeric.OpenArray(ndvi)
+ds.SetGeoTransform(geoTrans)
+ds.SetProjection(srcImage.GetProjection())
+dr = gdal.GetDriverByName("GTiff")
+dr.CreateCopy(target,ds)
+
 # Save ndvi as tiff
-gdalnumeric.SaveArray(ndvi, target, \
-  format="GTiff", prototype=source)
+#gdalnumeric.SaveArray(ndvi, target, \
+#  format="GTiff", prototype=source)

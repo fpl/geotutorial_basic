@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Parse GeoJson data
 jsdata = """{ 
 "type": "Feature", 
@@ -16,12 +18,12 @@ jsdata = """{
 }"""
 # Try to eval() the data
 point = eval(jsdata)
-print point["geometry"]
+print(point["geometry"])
 # Use the json module
 import json
-print json.loads(jsdata)
+print(json.loads(jsdata))
 # Parse and then dump GeoJSON
 pydata = json.loads(jsdata)
-print json.dumps(pydata)
+print(json.dumps(pydata))
 
 

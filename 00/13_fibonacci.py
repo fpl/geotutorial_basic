@@ -2,7 +2,7 @@
 Now use a class instead of a procedural module
 '''
 import sys
-from Fibonacci import Fibonacci as f
+from FibonacciBasic import Fibonacci as f
 
 def usage():
     print '''\
